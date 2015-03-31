@@ -1,0 +1,54 @@
+#@description Definition parameters for some electro-magnetic fields
+
+#@key_label   "name"
+#@meta_label  "type"
+
+[name="B_module" type="emfield::uniform_magnetic_field"]
+
+#@config Configuration parameters for the magnetic field of SuperNEMO
+
+#@description Default implicit magnetic field unit
+magnetic_field.unit        : string  = "gauss"
+
+#@description Coordinates of the static magnetic field (Bx, By, Bz)
+magnetic_field.coordinates : real[3] = 0.0 0.0 25.0
+
+[name="B_combination" type="emfield::linear_combination_field"]
+
+#@config Configuration parameters for the magnetic field of SuperNEMO
+
+#@description Default implicit magnetic field unit
+magnetic_field.unit        : string  = "gauss"
+
+#@description Coordinates of the static magnetic field (Bx, By, Bz)
+magnetic_field.coordinates : real[3] = 0.0 0.0 25.0
+
+[name="B_test" type="emfield::uniform_magnetic_field"]
+
+#@config Configuration parameters for the magnetic field of SuperNEMO
+
+#@description Default implicit magnetic field unit
+magnetic_field.unit        : string  = "gauss"
+
+#@description Coordinates of the static magnetic field (Bx, By, Bz)
+magnetic_field.coordinates : real[3] = 0.0 0.0 0.0
+
+[name="B_test_placement" type="emfield::placement_field"]
+
+#@config Configuration parameters for the magnetic field of SuperNEMO
+
+length.unit : string = "mm"
+
+field.name : string = "B_test"
+
+#@description Default implicit magnetic field unit
+placement.x : real  = 10000.0
+
+#@description Default implicit magnetic field unit
+placement.y : real  = 10000.0
+
+#@description Default implicit magnetic field unit
+placement.z : real  = 10000.0
+
+# #@description Coordinates of the static magnetic field (Bx, By, Bz)
+# magnetic_field.coordinates : real[3] = 0.0 0.0 0.0

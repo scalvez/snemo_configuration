@@ -1,0 +1,44 @@
+#@description A sample list of setups
+#@key_label   "name"
+#@meta_label  "type"
+
+[name="charged_particle_tracking" type="snemo::reconstruction::charged_particle_tracking_module"]
+
+#@description Logging flag
+logging.priority : string = "warning"
+
+#@description The label of the Geometry service
+Geo_label : string  = "Geo"
+
+#@description The label of the 'Calibrated Data' bank
+CD_label : string  = "CD"
+
+#@description The label of the 'Tracker Trajectory Data' bank
+TTD_label : string  = "TTD"
+
+#@description The label of the 'Particle Track Data' bank
+PTD_label : string  = "PTD"
+
+#@description List of drivers to be used (see description below)
+drivers : string[3] = "VED" "CCD" "CAD"
+
+#@description Vertex Extrapolation Driver logging priority
+VED.logging.priority : string = "warning"
+
+#@description Use linear extrapolation (not implemented yet)
+VED.use_linear_extrapolation : boolean = 0
+
+#@description Charge Computation Driver logging priority
+CCD.logging.priority : string = "warning"
+
+#@description Charge sign convention
+CCD.charge_from_source : boolean = 1
+
+#@description Calorimeter Association Driver logging priority
+CAD.logging.priority : string = "warning"
+
+#@description Maximum matching distance for track/calo association
+CAD.matching_tolerance : real as length = 100 mm
+
+#@description Use a simpler approach by looking for gieger cells in front of calo (not implemented yet)
+CAD.use_last_geiger_cell : boolean = 0

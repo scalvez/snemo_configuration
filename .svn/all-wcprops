@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master
+END
+.sngenvertex_manager.tangle
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/.sngenvertex_manager.tangle
+END
+sng4_manager.conf
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/sng4_manager.conf
+END
+step_hit_processor_manager.conf
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/step_hit_processor_manager.conf
+END
+.sngenbb_manager.tangle
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/.sngenbb_manager.tangle
+END
+analysis_modules.conf
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/analysis_modules.conf
+END
+.simulation_config.tangle
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/.simulation_config.tangle
+END
+particle_tracking_modules.conf
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/particle_tracking_modules.conf
+END
+simulated_data_cuts.conf
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/simulated_data_cuts.conf
+END
+calibration_modules.conf
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/calibration_modules.conf
+END
+locator_plugin.conf
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/locator_plugin.conf
+END
+basic_histograms.conf
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/basic_histograms.conf
+END
+calibrated_data_cuts.conf
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/calibrated_data_cuts.conf
+END
+tracker_clustering_modules.conf
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/tracker_clustering_modules.conf
+END
+services.conf
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/services.conf
+END
+snparticles.conf
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/snparticles.conf
+END
+magnetic_field_drivers.conf
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/magnetic_field_drivers.conf
+END
+snem_processes.conf
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/snem_processes.conf
+END
+tracker_trajectory_data_cuts.conf
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/tracker_trajectory_data_cuts.conf
+END
+misc_vg.lis
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/misc_vg.lis
+END
+.sngeometry_manager.tangle
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/.sngeometry_manager.tangle
+END
+tracker_vg.lis
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/tracker_vg.lis
+END
+service_manager.conf
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/service_manager.conf
+END
+materials_aliases.def
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/materials_aliases.def
+END
+utl_modules.conf
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/utl_modules.conf
+END
+dlls.conf
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/dlls.conf
+END
+materials_plugin.conf
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/materials_plugin.conf
+END
+io_modules.conf
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/io_modules.conf
+END
+.README.tangle
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/.README.tangle
+END
+sngenvertex_manager.conf
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/sngenvertex_manager.conf
+END
+plot_modules.conf
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/plot_modules.conf
+END
+tracker_fitting_modules.conf
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/tracker_fitting_modules.conf
+END
+magnetic_field_plugin.conf
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/magnetic_field_plugin.conf
+END
+.sng4_manager.tangle
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/.sng4_manager.tangle
+END
+.step_hit_processor_factory.tangle
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/.step_hit_processor_factory.tangle
+END
+sngenbb_manager.conf
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/sngenbb_manager.conf
+END
+histogram_templates.conf
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/histogram_templates.conf
+END
+simulation_modules.conf
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/simulation_modules.conf
+END
+particle_track_data_cuts.conf
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/particle_track_data_cuts.conf
+END
+hall_vg.lis
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/hall_vg.lis
+END
+module_manager.conf
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/module_manager.conf
+END
+.snanalysis_manager.tangle
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/.snanalysis_manager.tangle
+END
+tracker_clustering_data_cuts.conf
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/tracker_clustering_data_cuts.conf
+END
+cut_manager.conf
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/cut_manager.conf
+END
+sngeometry_manager.conf
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/sngeometry_manager.conf
+END
+scin_vg.lis
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/scin_vg.lis
+END
+snsimulation_header.conf
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/snsimulation_header.conf
+END
+source_vg.lis
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/source_vg.lis
+END
+sngenbb_wrappers.conf
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/users/calvez/!svn/ver/14/nemo/magnetic_shielding/snemo_configuration/master/sngenbb_wrappers.conf
+END

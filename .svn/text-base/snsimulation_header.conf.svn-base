@@ -1,0 +1,8 @@
+#@description The analysis description
+analysis.description : string = "Sensitivity studies for SuperNEMO demonstrator"
+
+#@description The version control status
+analysis.vc_status : string = ""
+
+#@description The total number of event simulated
+analysis.total_number_of_event : integer = 1

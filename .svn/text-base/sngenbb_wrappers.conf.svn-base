@@ -1,0 +1,121 @@
+#@description A sample list of setups
+#@key_label   "name"
+#@meta_label  "type"
+
+[name="bb0nu_Pb214" type="genbb::wdecay0"]
+#@config Neutrinoless double beta decay of Pb-214 [DBD]
+decay_type      : string  = "DBD"
+decay_isotope   : string  = "Pb214"
+decay_dbd_level : integer = 0
+decay_dbd_mode  : integer = 1
+
+[name="Se82.2nubb-2MeV" type="genbb::wdecay0"]
+#@config Two neutrino double beta decay of Se-82, 2nubb [DBD]
+decay_type      : string  = "DBD"
+decay_isotope   : string  = "Se82"
+decay_dbd_level : integer = 0
+decay_dbd_mode  : integer = 4 # 2nubb
+energy_min      : real as energy  = 2000. keV
+# energy_max    : real as energy  = 3000. keV
+
+[name="Tl208-2MeV" type="genbb::wdecay0"]
+#@config Tl-208 decay [background]
+decay_type      : string  = "background"
+decay_isotope   : string  = "Tl208"
+energy_min      : real as energy  = 100. keV
+energy_max      : real as energy  = 10. keV
+
+[name="electron_2-3MeV_flat" type="genbb::single_particle_generator"]
+
+#@config Parameters for the "single_particle" mode (class genbb::single_particle_generator):
+
+#@description Seed for the embedded random number generator:
+seed                  : integer = 314159
+
+#@description Generated particle ("electron", "positron", "gamma", "alpha"):
+particle_name         : string = "electron"
+
+#@description Mode ("energy_range", "gaussian_energy", "monokinetic", "spectrum"):
+mode                  : string = "energy_range"
+
+### Only for "energy_range" mode:
+min_energy            : real   = 2000.
+max_energy            : real   = 3000.
+energy_unit           : string = "keV"
+
+### Only for "gaussian_energy" mode:
+#mean_energy           : real   = 1000.
+#sigma_energy          : real   =  100.
+#energy_unit           : string = "keV"
+
+### Only for "monokinetic" mode:
+#energy                : real   = 5500.
+#energy_unit           : string = "keV"
+
+### Only for "spectrum" mode:
+#spectrum.data_file    : string = "${SNGENBB_DATA_DIR}/testing/data/sample_tabulated_energy_spectrum.data"
+
+randomized_direction   : boolean = 1
+
+[name="electron_10deg_cone" type="genbb::single_particle_generator"]
+
+#@config Parameters for the "single_particle" mode (class genbb::single_particle_generator):
+
+#@description Seed for the embedded random number generator:
+seed                  : integer = 314159
+
+#@description Generated particle ("electron", "positron", "gamma", "alpha"):
+particle_name         : string = "electron"
+
+#@description Mode ("energy_range", "gaussian_energy", "monokinetic", "spectrum"):
+mode          : string = "monokinetic"
+
+#@description Direction of the emitted particle
+emission_direction : string = "cone"
+
+#@description The emission cone axis (values: "+x", "-x", "+y", "-y", "+z", "-z", "30.0 45.0 degree")
+cone.axis : string = "-z"
+
+#@description The default implicit angle unit
+angle_unit : string = "degree"
+
+#@description The minimum emission angle (cone)
+cone.min_angle : real as angle = 0 degree
+
+#@description The maximum emission angle (cone)
+cone.max_angle : real as angle = 10 degree
+
+#@description The kinetic energy of the generated particle
+energy        : real as energy = 3000 keV
+
+[name="gamma_0-3MeV_flat" type="genbb::single_particle_generator"]
+
+#@config Parameters for the "single_particle" mode (class genbb::single_particle_generator):
+
+#@description Seed for the embedded random number generator:
+seed                  : integer = 314159
+
+#@description Generated particle ("electron", "positron", "gamma", "alpha"):
+particle_name         : string = "gamma"
+
+#@description Mode ("energy_range", "gaussian_energy", "monokinetic", "spectrum"):
+mode                  : string = "energy_range"
+
+### Only for "energy_range" mode:
+min_energy            : real   = 1000.
+max_energy            : real   = 1000.
+energy_unit           : string = "keV"
+
+### Only for "gaussian_energy" mode:
+#mean_energy           : real   = 1000.
+#sigma_energy          : real   =  100.
+#energy_unit           : string = "keV"
+
+### Only for "monokinetic" mode:
+#energy                : real   = 5500.
+#energy_unit           : string = "keV"
+
+### Only for "spectrum" mode:
+#spectrum.data_file    : string = "${SNGENBB_DATA_DIR}/testing/data/sample_tabulated_energy_spectrum.data"
+
+randomized_direction   : boolean = 1

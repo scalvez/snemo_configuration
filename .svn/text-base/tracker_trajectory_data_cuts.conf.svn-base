@@ -1,0 +1,23 @@
+#@description A sample list of setups
+#@key_label   "name"
+#@meta_label  "type"
+
+[name="has_tracker_trajectory_data" type="dpp::utils_cut"]
+
+#@description Logging priority
+logging.priority : string = "warning"
+
+#@description The running mode of this utils_cut instance
+mode : string = "has_bank"
+
+#@description The name of the bank to be checked (mandatory)
+has_bank.name : string = "TTD"
+
+[name="tracker_trajectory_cut" type="cuts::multi_and_cut"]
+
+#@description Logging priority
+logging.priority : string = "warning"
+
+#@description The cuts to be combined
+cuts : string[1] = \
+  "has_tracker_trajectory_data"

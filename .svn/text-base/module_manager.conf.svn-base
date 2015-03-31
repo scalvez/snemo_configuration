@@ -1,0 +1,23 @@
+#@description Module manager logging priority
+logging.priority : string = "warning"
+
+#@description Embedded module factory debug flag
+factory.debug : boolean = 0
+
+#@description Embedded module factory 'no preload' flag
+factory.no_preload : boolean = 0
+
+#@description The configuration file of the embedded service manager
+service_manager.configuration : string[1] as path = \
+    "$SW_WORK_DIR/snemo_configuration/master/service_manager.conf"
+
+#@description The configuration files for modules
+modules.configuration_files : string[8] as path =                         \
+    "$SW_WORK_DIR/snemo_configuration/master/io_modules.conf"                 \
+    "$SW_WORK_DIR/snemo_configuration/master/utl_modules.conf"                \
+    "$SW_WORK_DIR/snemo_configuration/master/simulation_modules.conf"         \
+    "$SW_WORK_DIR/snemo_configuration/master/calibration_modules.conf"        \
+    "$SW_WORK_DIR/snemo_configuration/master/tracker_clustering_modules.conf" \
+    "$SW_WORK_DIR/snemo_configuration/master/tracker_fitting_modules.conf"    \
+    "$SW_WORK_DIR/snemo_configuration/master/particle_tracking_modules.conf"  \
+    "$SW_WORK_DIR/snemo_configuration/master/analysis_modules.conf"

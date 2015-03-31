@@ -1,0 +1,129 @@
+#@description A sample list of setups
+#@key_label   "name"
+#@meta_label  "type"
+
+[name="has_calibrated_data" type="dpp::utils_cut"]
+
+#@description Logging priority
+logging.priority : string = "warning"
+
+#@description The running mode of this utils_cut instance
+mode : string = "has_bank"
+
+#@description The name of the bank to be checked (mandatory)
+has_bank.name : string = "CD"
+
+[name="has_cd_calorimeter" type="snemo::cut::calibrated_data_cut"]
+
+#@description Logging priority
+logging.priority : string = "warning"
+
+#@description The label/name of the 'calibrated data' bank (mandatory)
+CD_label : string = "CD"
+
+#@description Activate the check for a special boolean (flag) property
+mode.has_hit_category : boolean = 1
+
+#@description Name of the MC hit category to be checked
+has_hit_category.category : string = "calorimeter"
+
+[name="!has_cd_calorimeter" type="cuts::not_cut"]
+
+#@description The cut to be negated (mandatory)
+cut : string = "has_cd_calorimeter"
+
+[name="cd_calorimeter_cut" type="snemo::cut::calibrated_data_cut"]
+
+#@description priority
+logging.priority : string = "warning"
+
+#@description The label/name of the 'calibrated data' bank (mandatory)
+CD_label : string = "CD"
+
+#@description Activate the check for multiplicity of calibrated hits
+mode.range_hit_category : boolean = 1
+
+#@description Name of the hit category to be checked
+range_hit_category.category : string = "calorimeter"
+
+#@description Minimal number of calibrated hits in the choosen category
+range_hit_category.min : integer = 2
+
+# # #@description Maximal number of calibrated hits in the choosen category
+# range_hit_category.max : integer = 2
+
+[name="has_cd_tracker" type="snemo::cut::calibrated_data_cut"]
+
+#@description Logging priority
+logging.priority : string = "warning"
+
+#@description The label/name of the 'calibrated data' bank (mandatory)
+CD_label : string = "CD"
+
+#@description Activate the check for a special boolean (flag) property
+mode.has_hit_category : boolean = 1
+
+#@description Name of the hit category to be checked
+has_hit_category.category : string = "tracker"
+
+[name="!has_cd_tracker" type="cuts::not_cut"]
+
+#@description The cut to be negated (mandatory)
+cut : string = "has_cd_tracker"
+
+[name="cd_tracker_cut" type="snemo::cut::calibrated_data_cut"]
+
+#@description Logging priority
+logging.priority : string = "warning"
+
+#@description The label/name of the 'calibrated data' bank (mandatory)
+CD_label : string = "CD"
+
+#@description Activate the check for multiplicity of calibrated hits
+mode.range_hit_category : boolean = 1
+
+#@description Name of the hit category to be checked
+range_hit_category.category : string = "tracker"
+
+#@description Minimal number of calibrated hits in the choosen category
+range_hit_category.min : integer = 0
+
+#@description Maximal number of calibrated hits in the choosen category
+#range_hit_category.max : integer = 1
+
+# [name="has_delayed_tracker_hit" type="snemo::cut::calibrated_data_cut"]
+
+# #@description Cut description
+# cut.description : string = "Select delayed calibrated tracker hit"
+
+# #@description Logging priority
+# logging.priority : string = "warning"
+
+# #@description The label/name of the 'calibrated data' bank (mandatory)
+# CD_label : string = "CD"
+
+# #@description Activate the check for delayed trait bit
+# mode.tracker_hit_is_delayed : boolean = 1
+
+# #@description Delayed time of the tracker hit
+# tracker_hit_is_delayed.delay_time : real as time = 15 us
+
+# [name="!has_delayed_tracker_hit" type="cuts::not_cut"]
+
+# #@description The cut to be negated (mandatory)
+# cut : string = "has_delayed_tracker_hit"
+
+[name="calibrated_cut" type="cuts::multi_and_cut"]
+
+#@description Logging priority
+logging.priority : string = "warning"
+
+#@description The cuts to be combined
+cuts : string[3] = \
+  "has_calibrated_data" \
+  "has_cd_calorimeter" \
+  "cd_calorimeter_cut" \
+  "!has_delayed_tracker_hit"
+
+      # "has_cd_tracker" \
+      # "cd_tracker_cut"\
