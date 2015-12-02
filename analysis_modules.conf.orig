@@ -202,7 +202,7 @@ Histo_output_files : string[2] as path =                       \
 
 #@description The ouput file where to store the histograms
 Histo_template_files : string[1] as path = \
-    "$SW_WORK_DIR/snanalysis.mine/resources/setups/snemo/processing/histo_template.conf"
+    "${SW_WORK_DIR}/snanalysis.mine/resources/setups/snemo/processing/histo_template.conf"
 
 [name="matching_vertices_chain" type="dpp::chain_module"]
 
