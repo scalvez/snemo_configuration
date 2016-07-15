@@ -10,6 +10,7 @@
 logging.priority : string = "warning"
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
+# origin : string = "category='calorimeter_pmt' module={*} side={1} column={1} row={1}"
 origin : string = "category='calorimeter_pmt' module={*} side={*} column={*} row={*}"
 
 #@description Generation mode ("surface" or "bulk")
