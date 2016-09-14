@@ -7,7 +7,7 @@
 #@config Vertex generation from the bulk of the main calorimeter wrapper
 
 #@description Logging priority
-logging.priority : string = "warning"
+logging.priority : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
 #origin : string = "category=calorimeter_wrapper module={*} side={1} column={0;1;2;4;19} row={0;1;2;12;13}"
@@ -21,7 +21,7 @@ mode   : string = "bulk"
 #@config Vertex generation from the bulk of the X-wall calorimeter wrapper
 
 #@description Logging priority
-logging.priority : string = "warning"
+logging.priority : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
 origin : string = "category='xcalo_wrapper' module={*} side={*} column={*} row={*}"
@@ -34,7 +34,7 @@ mode   : string = "bulk"
 #@config Vertex generation from the bulk of the gamma veto wrapper
 
 #@description Logging priority
-logging.priority : string = "warning"
+logging.priority : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
 origin : string = "category='gveto_wrapper' module={*} side={*} wall={*} column={*}"
@@ -47,7 +47,7 @@ mode   : string = "bulk"
 #@config Vertex generation from the surface of the main calorimeter wrapper
 
 #@description Logging priority
-logging.priority : string = "warning"
+logging.priority : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
 origin : string = "category='calorimeter_wrapper' module={*} side={*} column={*} row={*}"
@@ -56,14 +56,14 @@ origin : string = "category='calorimeter_wrapper' module={*} side={*} column={*}
 mode   : string = "surface"
 
 #@description Surface mode box top face activation
-mode.surface.top  : boolean = 1
+mode.surface.top  : boolean = true
 
 [name="xcalo_wrapper_surface" type="genvtx::box_model_vg"]
 
 #@config Vertex generation from the surface of the X-wall calorimeter wrapper
 
 #@description Logging priority
-logging.priority : string = "warning"
+logging.priority : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
 origin : string = "category='xcalo_wrapper' module={*} side={*} column={*} row={*}"
@@ -72,20 +72,82 @@ origin : string = "category='xcalo_wrapper' module={*} side={*} column={*} row={
 mode   : string = "surface"
 
 #@description Surface mode box top face activation
-mode.surface.top  : boolean = 1
+mode.surface.top  : boolean = true
 
 [name="gveto_wrapper_surface" type="genvtx::box_model_vg"]
 
 #@config Vertex generation from the surface of the gamma veto wrapper
 
 #@description Logging priority
-logging.priority : string = "warning"
+logging.priority : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
 origin : string = "category='gveto_wrapper' module={*} side={*} wall={*} column={*}"
 
 #@description Generation mode ("surface" or "bulk")
-mode   : string = "surface"
+mode : string = "surface"
 
 #@description Surface mode box top face activation
-mode.surface.top  : boolean = 1
+mode.surface.top : boolean = true
+
+[name="pmt_glass_bulk" type="genvtx::polycone_model_vg"]
+
+#@config Vertex generation from the bulk of the PMT glass wrapper
+
+#@description Logging priority
+logging.priority : string = @variant(core:logging_priority|"warning")
+
+#@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
+origin : string = "category='calorimeter_pmt_glass' module={*} side={*} column={*} row={*}"
+
+#@description Generation mode ("surface" or "bulk")
+mode : string = "bulk"
+
+#@description Generation within polycone material
+mode.bulk.body : boolean = true
+
+#@description Generate vertex on all polycone frustrum
+polycone.all_frustrum : boolean = true
+
+[name="calo_scin_bulk" type="genvtx::box_model_vg"]
+
+  #@config Vertex generation from 'tracking_gas' material
+
+  #@description Logging priority
+  logging.priority  : string = @variant(core:logging_priority|"warning")
+
+  #@description Geometry version requirement (not working with version lower than 3.0)
+  geometry.setup_requirement : string = "snemo::demonstrator(>=3)"
+
+  #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
+  origin : string = "category='calorimeter_optical_module' module={*} side={*} column={*} row={*}"
+
+  #@description Use bounding box method to shoot vertex in complicated form
+  use_bounding_box : boolean = true
+
+  #@description Generation mode ("surface" or "bulk")
+  mode   : string = "bulk"
+
+#@description Vertex validation support
+vertex_validation_support : boolean = true
+
+#@description Maximum number of tries for the rejection method
+validation.logging.priority : string = @variant(core:logging_priority|"warning")
+
+#@description Vertex validation activation
+validation.activation : boolean = true
+
+#@description Maximum number of tries for the rejection method
+validation.maximum_number_of_tries : integer = 1000
+
+#@description Vertex validation id
+validation.validator_id : string = "genvtx::in_materials_vertex_validator"
+
+#@description List of materials to be used
+validation.validator_params.materials.ref : string[1] = "ENVINET_PS_scintillator"
+
+# #@description Logging level for validator
+# validation.validator_params.max_depth : integer = 100
+
+#@description Logging level for validator
+validation.validator_params.logging.priority : string = @variant(core:logging_priority|"warning")

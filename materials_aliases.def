@@ -1,8 +1,8 @@
-#@description A sample list of elements
-#@key_label   "name"
-#@meta_label  "type"
+# #@description A sample list of elements
+# #@key_label   "name"
+# #@meta_label  "type"
 
-[name="bb_source_material" type="alias"]
+# [name="bb_source_material" type="alias"]
 
-#@description The alias for the source
-material : string = "snemo::se82_source_material"
+# #@description The alias for the source
+# material : string = @variant(detector:bb_source_material)

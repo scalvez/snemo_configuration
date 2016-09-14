@@ -7,7 +7,7 @@
 #@config Vertex generation from the bulk volume of the anode wires
 
 #@description Logging priority
-logging.priority  : string = "warning"
+logging.priority  : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
 origin : string = "category='drift_cell_anodic_wire' module={*} side={*} layer={*} row={*}"
@@ -20,7 +20,7 @@ mode   : string = "bulk"
 #@config Vertex generation from the surface of the anode wires
 
 #@description Logging priority
-logging.priority  : string = "warning"
+logging.priority  : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
 origin : string = "category='drift_cell_anodic_wire' module={*} side={*} layer={*} row={*}"
@@ -29,20 +29,20 @@ origin : string = "category='drift_cell_anodic_wire' module={*} side={*} layer={
 mode   : string = "surface"
 
 #@description Surface mode box side face activation
-mode.surface.side   : boolean = 1
+mode.surface.side   : boolean = true
 
 #@description Surface mode box bottom face activation
-mode.surface.bottom : boolean = 0
+mode.surface.bottom : boolean = false
 
 #@description Surface mode box top face activation
-mode.surface.top    : boolean = 0
+mode.surface.top    : boolean = false
 
 [name="field_wire_surface" type="genvtx::cylinder_model_vg"]
 
 #@config Vertex generation from the surface of the field wires
 
 #@description Logging priority
-logging.priority  : string = "warning"
+logging.priority  : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
 origin : string = "category='drift_cell_field_wire' module={*} side={*} layer={*} row={*} set={*} wire={*}"
@@ -51,23 +51,150 @@ origin : string = "category='drift_cell_field_wire' module={*} side={*} layer={*
 mode   : string = "surface"
 
 #@description Surface mode box side face activation
-mode.surface.side   : boolean = 1
+mode.surface.side   : boolean = true
 
 #@description Surface mode box bottom face activation
-mode.surface.bottom : boolean = 0
+mode.surface.bottom : boolean = false
 
 #@description Surface mode box top face activation
-mode.surface.top    : boolean = 0
+mode.surface.top    : boolean = false
 
 [name="field_wire_bulk" type="genvtx::cylinder_model_vg"]
 
-#@config Vertex generation from the bulk of the field wires
+#@config Vertex generation from the bulk volume of the anode wires
 
 #@description Logging priority
-logging.priority  : string = "warning"
+logging.priority  : string = @variant(core:logging_priority|"warning")
 
 #@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
-origin : string = "category='drift_cell_field_wire' module={*} side={*} layer={*} row={*} set={*} wire={*}"
+origin : string = "category='drift_cell_field_wire' module={*} side={*} layer={*} row={*}"
 
 #@description Generation mode ("surface" or "bulk")
 mode   : string = "bulk"
+
+[name="tracker_drift_cell_bulk" type="genvtx::box_model_vg"]
+
+#@config Vertex generation from the core of Geiger cell
+
+#@description Logging priority
+logging.priority  : string = @variant(core:logging_priority|"warning")
+
+#@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
+origin : string = "category='drift_cell_core' module={*} side={*} layer={*} row={*}"
+
+#@description Generation mode ("surface" or "bulk")
+mode   : string = "bulk"
+
+[name="tracker_volume_box" type="genvtx::box_vg"]
+
+#@config Vertex generation from the tracker gaz
+
+#@description Logging priority
+logging.priority  : string = @variant(core:logging_priority|"warning")
+
+#@description Generation mode ("surface" or "bulk")
+mode   : string = "bulk"
+
+#@description Box x size
+box.x : real as length =  433.9165 mm
+
+#@description Box y size
+box.y : real as length = 5008.0 mm
+
+#@description Box z size
+box.z : real as length = 3030.0 mm
+
+[name="tracker_front_volume_bulk" type="genvtx::placement_vg"]
+
+#@config Vertex generation from the front tracker volume
+
+#@description Logging priority
+logging.priority  : string = @variant(core:logging_priority|"warning")
+
+#@description Vertex generator name to place
+vertex_generator.name : string = "tracker_volume_box"
+
+#@description Placement along x-axis
+placement.x : real as length = 217.04175 mm
+
+#@description Placement along y-axis
+placement.y : real as length = 0.0 mm
+
+#@description Placement along z-axis
+placement.z : real as length = 0.0 mm
+
+[name="tracker_back_volume_bulk" type="genvtx::placement_vg"]
+
+#@config Vertex generation from the front tracker volume
+
+#@description Logging priority
+logging.priority  : string = @variant(core:logging_priority|"warning")
+
+#@description Vertex generator name to place
+vertex_generator.name : string = "tracker_volume_box"
+
+#@description Placement along x-axis
+placement.x : real as length = -217.04175 mm
+
+#@description Placement along y-axis
+placement.y : real as length = 0.0 mm
+
+#@description Placement along z-axis
+placement.z : real as length = 0.0 mm
+
+[name="tracker_volume_bulk" type="genvtx::combined_vg"]
+
+#@config Vertex generation from the bulk volume of the tracker
+
+#@description Logging priority
+logging.priority  : string = @variant(core:logging_priority|"warning")
+
+#@description Geometry version requirement (not working with version lower than 2.0)
+geometry.setup_requirement : string = "snemo::demonstrator(>=3)"
+
+#@description Vertex generator names
+generators : string[2]  = "tracker_front_volume_bulk" "tracker_back_volume_bulk"
+
+#@description Absolute weight of different generators
+generators.tracker_front_volume_bulk.absolute_weight : real = 1.0
+generators.tracker_back_volume_bulk.absolute_weight  : real = 1.0
+
+[name="tracker_gas_bulk" type="genvtx::box_model_vg"]
+
+#@config Vertex generation from 'tracking_gas' material
+
+#@description Logging priority
+logging.priority  : string = @variant(core:logging_priority|"warning")
+
+#@description Geometry version requirement (not working with version lower than 3.0)
+geometry.setup_requirement : string = "snemo::demonstrator(>=3)"
+
+#@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
+origin : string = "category='module' module={*}"
+
+#@description Generation mode ("surface" or "bulk")
+mode   : string = "bulk"
+
+#@description Vertex validation support
+vertex_validation_support : boolean = true
+
+#@description Maximum number of tries for the rejection method
+validation.logging.priority : string = @variant(core:logging_priority|"warning")
+
+#@description Vertex validation activation
+validation.activation : boolean = true
+
+#@description Maximum number of tries for the rejection method
+validation.maximum_number_of_tries : integer = 1000
+
+#@description Vertex validation id
+validation.validator_id : string = "genvtx::in_materials_vertex_validator"
+
+#@description List of materials to be used
+validation.validator_params.materials.ref : string[1] = "tracking_gas"
+
+# #@description Logging level for validator
+# validation.validator_params.max_depth : integer = 100
+
+#@description Logging level for validator
+validation.validator_params.logging.priority : string = @variant(core:logging_priority|"warning")
