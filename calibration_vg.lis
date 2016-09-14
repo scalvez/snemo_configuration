@@ -1,0 +1,16 @@
+#@description A list of source calibration vertex generators
+#@key_label   "name"
+#@meta_label  "type"
+
+[name="calibration_source_bulk" type="genvtx::cylinder_model_vg"]
+
+#@config Vertex generation from the bulk of the calibration sources
+
+#@description Logging priority
+logging.priority : string = @variant(core:logging_priority|"warning")
+
+#@description Geometry origin of vertex in term of geometry category and addresses (geom ID)
+origin : string = "category='calibration_spot' module={*} path={*} position={*}"
+
+#@description Generation mode ("surface" or "bulk")
+mode   : string = "bulk"
