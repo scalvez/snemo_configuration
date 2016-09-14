@@ -1,0 +1,47 @@
+#@description The definitions for generic variants
+#@key_label   "name"
+#@meta_label  "type"
+
+[name="logging_priority.PM" type="parameter"]
+display_name              : string = "Logging priority"
+terse_description         : string = "The logging priority"
+type                      : string = "string"
+mutability                : string = "variable"
+variable.mode             : string = "enumeration"
+string.enumerated.size    : integer = 8
+string.default            : string = "fatal"
+string.enumerated_0.value : string = "fatal"
+string.enumerated_1.value : string = "critical"
+string.enumerated_2.value : string = "error"
+string.enumerated_3.value : string = "warning"
+string.enumerated_4.value : string = "notice"
+string.enumerated_5.value : string = "information"
+string.enumerated_6.value : string = "debug"
+string.enumerated_7.value : string = "trace"
+
+[name="output_path.PM" type="parameter"]
+display_name   : string = "Output directory"
+description    : string = "The output directory for the generated files"
+type           : string = "string"
+path           : boolean = 1
+mutability     : string = "variable"
+variable.mode  : string = "free"
+string.default : string = "/tmp/${USER}/snemo.d/"
+
+[name="core.VM" type="variant"]
+
+#@config A variant model describing the core parameters
+
+#@description The display name of this variant
+display_name : string = "Core setup"
+
+#@description A short description of the variant
+terse_description : string = "The configuration parameters for the core application"
+
+parameters.logging_priority.model : string = "logging_priority.PM"
+parameters.output_path.model : string = "output_path.PM"
+
+#@description The list of variant parameters
+parameters : string[2] = \
+"logging_priority"  \
+"output_path"
