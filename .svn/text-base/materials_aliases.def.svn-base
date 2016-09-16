@@ -1,8 +1,0 @@
-#@description A sample list of elements
-#@key_label   "name"
-#@meta_label  "type"
-
-[name="bb_source_material" type="alias"]
-
-#@description The alias for the source
-material : string = "snemo::se82_source_material"
