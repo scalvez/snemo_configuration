@@ -151,3 +151,21 @@ validation.validator_params.materials.ref : string[1] = "ENVINET_PS_scintillator
 
 #@description Logging level for validator
 validation.validator_params.logging.priority : string = @variant(core:logging_priority|"warning")
+
+[name="all_calo_wrapper_surface" type="genvtx::combined_vg"]
+
+#@config Vertex generation from the bulk volume of the source pads
+
+#@description Logging priority
+logging.priority  : string = @variant(core:logging_priority|"warning")
+
+#@description Geometry version requirement (not working with version lower than 2.0)
+geometry.setup_requirement : string = "snemo::demonstrator(>=3)"
+
+#@description Vertex generator names
+generators : string[3]  = "calo_wrapper_surface" "xcalo_wrapper_surface" "gveto_wrapper_surface"
+
+#@description Absolute weight of different generators
+generators.calo_wrapper_surface.absolute_weight : real = 1.0
+generators.xcalo_wrapper_surface.absolute_weight : real = 1.0
+generators.gveto_wrapper_surface.absolute_weight : real = 1.0
